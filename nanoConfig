@@ -1,0 +1,57 @@
+#!/bin/bash
+
+#Setting personal configurations in nano
+if [ -f ~/.nanorc ]
+then
+	echo 'local nanorc already configured'
+else
+	echo 'setting tabs in nano to 4'
+	echo 'set tabsize 4' >> ~/.nanorc
+	echo 'setting line numbers'
+	echo 'set const' >> ~/.nanorc
+fi
+
+#Adding syntax highlighting files for these languages:
+#
+if [ -d ~/.nano ]
+then
+	echo 'already configured highlighting'
+else
+	echo 'grabbing syntax highlighting files'
+	git clone https://github.com/scopatz/nanorc.git ~/.nano
+
+	echo 'adding web development tools highlighting'
+
+	echo 'adding html'
+	echo '## html' >> ~/.nanorc
+	echo 'include "~/.nano/html.nanorc"' >> ~/.nanorc
+
+	echo '## css' >> ~/.nanorc
+	echo 'include "~/.nano/css.nanorc"' >> ~/.nanorc
+
+	echo '## js' >> ~/.nanorc
+	echo 'include "~/.nano/js.nanorc"' >> ~/.nanorc
+
+	echo '## json' >> ~/.nanorc
+	echo 'include "~/.nano/json.nanorc"' >> ~/.nanorc
+
+	echo '## markdown' >> ~/.nanorc
+	echo 'include "~/.nano/markdown.nanorc"' >> ~/.nanorc
+
+	echo 'adding normal development highlighting'
+
+	echo '## python' >> ~/.nanorc
+	echo 'include "~/.nano/python.nanorc"' >> ~/.nanorc
+
+	echo '## C/C++' >> ~/.nanorc
+	echo 'include "~/.nano/c.nanorc"' >> ~/.nanorc
+
+	echo '## sh' >> ~/.nanorc
+	echo 'include "~/.nano/sh.nanorc"' >> ~/.nanorc
+
+	echo '## makefile' >> ~/.nanorc
+	echo 'include "~/.nano/makefile.nanorc"' >> ~/.nanorc
+
+
+fi
+
