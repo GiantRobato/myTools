@@ -6,7 +6,7 @@ tools for when i program on a new computer and settings
 files
 =====
 
-nanoConfig - sets up syntax highlighting for the following
+**nanoConfig** - sets up syntax highlighting for the following
 -html
 -css
 -js
@@ -15,3 +15,5 @@ nanoConfig - sets up syntax highlighting for the following
 -c/c++
 -python
 -sh
+
+installTools - installs tmux and htop
